@@ -9,7 +9,7 @@ import { DocumentComponent } from './components/document/document.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = {
-  url: 'http://localhost:4444',
+  url: `http://${location.hostname}:4444`,
   options: {}
 };
 
