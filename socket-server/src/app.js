@@ -33,6 +33,7 @@ io.on("connection", socket => {
 });
 
 var port = 4444;
-http.listen(port);
-console.log("server is listening %d", port);
+http.listen(port, () => {
+  console.log("server is listening %d", port);
+});
 
