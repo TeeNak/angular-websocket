@@ -20,7 +20,8 @@ io.on("connection", socket => {
   socket.on("addDoc", doc => {
     documents[doc.id] = doc;
     safeJoin(doc.id);
-    io.emit("documents", Object.keys(documents));
+    //io.emit("documents", Object.keys(documents));
+    socket.emit("documents", Object.keys(documents));
     socket.emit("document", doc);
   });
 
@@ -29,7 +30,8 @@ io.on("connection", socket => {
     socket.to(doc.id).emit("document", doc);
   });
 
-  io.emit("documents", Object.keys(documents));
+  //io.emit("documents", Object.keys(documents));
+  socket.emit("documents", Object.keys(documents));
 });
 
 var port = 4444;
